@@ -15,6 +15,8 @@ const Weather = ({route, navigation}) => {
   const [time, setTime] = useState();
   const [chack, setchack] = useState('');
   const [BgImage, setBgImage] = useState();
+  
+  //condition to render the backgrounImage 
 
   const image = () => {
     if (weather.search('rain') > -1) {
@@ -28,7 +30,7 @@ const Weather = ({route, navigation}) => {
 
   useEffect(() => {
     fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=62648898beab426e94a165947220303&q=${capital}&days=1&aqi=yes&alerts=yes`,
+      `https://api.weatherapi.com/v1/forecast.json?key=<Your_Api_key>=${capital}&days=1&aqi=yes&alerts=yes`,
     )
       .then(response => response.json())
       .then(response => {
